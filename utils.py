@@ -44,7 +44,8 @@ def treeTable(state='CA',
                        'PLT_CN',
                        'CN',
                        'DRYBIO_BOLE',
-                       'DRYBIO_TOP'],
+                       'DRYBIO_TOP',
+                       'CONDID'],
               if_ex='replace'):
     table_name = state.lower()+table.lower()
     df = toDF(state, table)
@@ -59,10 +60,10 @@ def fiaDesc(if_ex='replace'):
     '''
     url = 'https://docs.google.com/spreadsheets/d/1PRsdzEMTgCOHpbSbjqdZK38ZSJaJLX-01dHn4Yu_m9o/export?gid={0}&format=csv'
     
-    tGid = {'reservcd': 0, 'owncd': 445353516}
+    tGid = {'reservcd': 0,
+            'owncd': 445353516,
+            'cbm_fgroup': 531181417,
+            'cbm_ageid': 687461256}
     for d in tGid.keys():
-        if d == 'reservcd':
-            df = pd.read_csv(url.format(tGid[d]))
-        else:
-            df = pd.read_csv(url.format(tGid[d]), header=1)
+        df = pd.read_csv(url.format(tGid[d]))
         df.to_sql(d, engine, if_exists=if_ex)
