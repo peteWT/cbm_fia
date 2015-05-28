@@ -61,7 +61,9 @@ db/pop_eval_grp:
 db/plotsnap:
 	python -c "import utils as ut; ut.toDB('${state}','plotsnap')"
 	touch $@
-
+db/reftables:
+	python -c "import utils as ut; ut.fiaDesc()"
+	touch $@
 
 .PHONY: inputs
 inputs: db/plot db/cond db/ecosub db/ref_forest_type_group

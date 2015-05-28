@@ -5,13 +5,13 @@ create table cbm_cls_summary as select
 	     then psm.expns * c.condprop_unadj * psm.adj_factor_macr
 	     else psm.expns * c.condprop_unadj * psm.adj_factor_subp
 	     end) as estimate,
-	c.reservcd,
-	c.owngrpcd,
-	rft.meaning,
-	p.unitcd,
+	rcd.cbm_cd reserve_group,
+	ogc.cbm_ogcd owner_group,
+	fg.cbm_spcd forest_group,
+	ru.meaning ref_unit,
 	case when stdage = 0 then 'AGEID0'
 	     when stdage < 200 then 'AGEID'||ceil(stdage/10)
-	     when stdage >= 200 then 'AGEID20'
+	     when stdage >= 200 then 'AGEID999'
 	     else 'NOAGE'
 	end as agerange
 
@@ -23,7 +23,12 @@ FROM cond c,
      pop_eval pev,
      pop_eval_typ pet,
      pop_eval_grp peg,
-     ref_forest_type rft
+     ref_forest_type ftc,
+     ref_forest_type_group fgc,
+     cbm_fgroup fg,
+     owngrpcd ogc,
+     reservcd rcd,
+     ref_unit ru
 WHERE p.cn = c.plt_cn
 AND pet.eval_typ = 'EXPCURR'
 AND c.cond_status_cd = 1
@@ -35,6 +40,11 @@ AND pev.cn = peu.eval_cn
 AND pev.cn = pet.eval_cn
 AND pet.eval_grp_cn = peg.cn
 AND peg.eval_grp = 62013
-and rft.value = c.fortypcd
-group by c.reservcd, rft.meaning, p.unitcd, c.owngrpcd, agerange;
+and c.fortypcd=ftc.value
+and ftc.typgrpcd=fg.typgrpcd
+and c.reservcd=rcd.reservcd
+and c.owngrpcd=ogc.owngrpcd
+and p.unitcd=ru.value
+and p.statecd=ru.statecd
+group by rcd.cbm_cd, fg.cbm_spcd, ru.meaning, ogc.cbm_ogcd, agerange;
 

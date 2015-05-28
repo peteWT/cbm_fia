@@ -63,7 +63,8 @@ def fiaDesc(if_ex='replace'):
     tGid = {'reservcd': 0,
             'owncd': 445353516,
             'cbm_fgroup': 531181417,
-            'cbm_ageid': 687461256}
+            'cbm_ageid': 687461256,
+            'owngrpcd': 1612354087}
     for d in tGid.keys():
         df = pd.read_csv(url.format(tGid[d]))
         df.to_sql(d, engine, if_exists=if_ex)
