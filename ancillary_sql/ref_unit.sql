@@ -1,0 +1,265 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: ref_unit; Type: TABLE; Schema: public; Owner: peter; Tablespace: 
+--
+
+CREATE TABLE ref_unit (
+    index bigint,
+    statecd bigint,
+    value bigint,
+    meaning text,
+    created_by double precision,
+    created_date text,
+    created_in_instance bigint,
+    modified_by double precision,
+    modified_date text,
+    modified_in_instance double precision
+);
+
+
+ALTER TABLE ref_unit OWNER TO peter;
+
+--
+-- Data for Name: ref_unit; Type: TABLE DATA; Schema: public; Owner: peter
+--
+
+COPY ref_unit (index, statecd, value, meaning, created_by, created_date, created_in_instance, modified_by, modified_date, modified_in_instance) FROM stdin;
+0	1	1	Southwest-South	\N	2005-02-24	333	\N	2009-01-27	440
+1	1	2	Southwest-North	\N	2005-02-24	333	\N	2009-01-27	440
+2	1	3	Southeast	\N	2005-02-24	333	\N	2009-01-27	440
+3	1	4	West Central	\N	2005-02-24	333	\N	2009-01-27	440
+4	1	5	North Central	\N	2005-02-24	333	\N	2009-01-27	440
+5	1	6	North	\N	2005-02-24	333	\N	2009-01-27	440
+6	2	1	Alaska	\N	2005-02-24	333	\N	2009-01-27	440
+7	4	1	Southern	\N	2005-02-24	333	\N	2009-01-27	440
+8	4	2	Northern	\N	2005-02-24	333	\N	2009-01-27	440
+9	5	1	South Delta	\N	2005-02-24	333	\N	2009-01-27	440
+10	5	2	North Delta	\N	2005-02-24	333	\N	2009-01-27	440
+11	5	3	Southwest	\N	2005-02-24	333	\N	2009-01-27	440
+12	5	4	Ouachita	\N	2005-02-24	333	\N	2009-01-27	440
+13	5	5	Ozark	\N	2005-02-24	333	\N	2009-01-27	440
+14	6	1	North Coast	\N	2005-02-24	333	\N	2009-01-27	440
+15	6	2	North Interior	\N	2005-02-24	333	\N	2009-01-27	440
+16	6	3	Sacramento	\N	2005-02-24	333	\N	2009-01-27	440
+17	6	4	Central Coast	\N	2005-02-24	333	\N	2009-01-27	440
+18	6	5	San Joaquin	\N	2005-02-24	333	\N	2009-01-27	440
+19	6	6	Southern	\N	2005-02-24	333	\N	2009-01-27	440
+20	8	1	Northern Front Range	\N	2005-02-24	333	\N	2009-01-27	440
+21	8	2	Southern Front Range	\N	2005-02-24	333	\N	2009-01-27	440
+22	8	3	West Central	\N	2005-02-24	333	\N	2009-01-27	440
+23	8	4	Western	\N	2005-02-24	333	\N	2009-01-27	440
+24	8	5	Eastern	\N	2005-02-24	333	\N	2009-01-27	440
+25	9	1	State	\N	2005-02-24	333	\N	2009-01-27	440
+26	10	1	State	\N	2005-02-24	333	\N	2009-01-27	440
+27	11	1	District of Columbia	\N	2005-06-07	333	\N	2009-01-27	440
+28	12	1	Northeast	\N	2005-02-24	333	\N	2009-01-27	440
+29	12	2	Northwest	\N	2005-02-24	333	\N	2009-01-27	440
+30	12	3	Central	\N	2005-02-24	333	\N	2009-01-27	440
+31	12	4	South	\N	2005-02-24	333	\N	2009-01-27	440
+32	13	1	Southeast	\N	2005-02-24	333	\N	2009-01-27	440
+33	13	2	Southwest	\N	2005-02-24	333	\N	2009-01-27	440
+34	13	3	Central	\N	2005-02-24	333	\N	2009-01-27	440
+35	13	4	North Central	\N	2005-02-24	333	\N	2009-01-27	440
+36	13	5	North	\N	2005-02-24	333	\N	2009-01-27	440
+37	15	1	Hawaii	\N	2005-02-24	333	\N	2014-11-24	489998
+38	16	1	Northern	\N	2005-02-24	333	\N	2009-01-27	440
+39	16	2	Southwestern	\N	2005-02-24	333	\N	2009-01-27	440
+40	16	3	Southeastern	\N	2005-02-24	333	\N	2009-01-27	440
+41	17	1	Southern	\N	2005-02-24	333	\N	2009-01-27	440
+42	17	2	Claypan	\N	2005-02-24	333	\N	2009-01-27	440
+43	17	3	Prairie	\N	2005-02-24	333	\N	2009-01-27	440
+44	18	1	Lower Wabash	\N	2005-02-24	333	\N	2009-01-27	440
+45	18	2	Knobs	\N	2005-02-24	333	\N	2009-01-27	440
+46	18	3	Upland Flats	\N	2005-02-24	333	\N	2009-01-27	440
+47	18	4	Northern	\N	2005-02-24	333	\N	2009-01-27	440
+48	19	1	Northeastern	\N	2005-02-24	333	\N	2009-01-27	440
+49	19	2	Southeastern	\N	2005-02-24	333	\N	2009-01-27	440
+50	19	3	Southwestern	\N	2005-02-24	333	\N	2009-01-27	440
+51	19	4	Northwestern	\N	2005-02-24	333	\N	2009-01-27	440
+52	20	1	Northeastern	\N	2005-02-24	333	\N	2009-01-27	440
+53	20	2	Southeastern	\N	2005-02-24	333	\N	2009-01-27	440
+54	20	3	Western	\N	2005-02-24	333	\N	2009-01-27	440
+55	21	1	Eastern	\N	2005-02-24	333	\N	2009-01-27	440
+56	21	2	Northern Cumberland	\N	2005-02-24	333	\N	2009-01-27	440
+57	21	3	Southern Cumberland	\N	2005-02-24	333	\N	2009-01-27	440
+58	21	4	Bluegrass	\N	2005-02-24	333	\N	2009-01-27	440
+59	21	5	Pennyroyal	\N	2005-02-24	333	\N	2009-01-27	440
+60	21	6	Western Coalfield	\N	2005-02-24	333	\N	2009-01-27	440
+61	21	7	Western	\N	2005-02-24	333	\N	2009-01-27	440
+62	22	1	North Delta	\N	2005-02-24	333	\N	2009-01-27	440
+63	22	2	South Delta	\N	2005-02-24	333	\N	2009-01-27	440
+64	22	3	Southwest	\N	2005-02-24	333	\N	2009-01-27	440
+65	22	4	Southeast	\N	2005-02-24	333	\N	2009-01-27	440
+66	22	5	Northwest	\N	2005-02-24	333	\N	2009-01-27	440
+67	23	1	Washington	\N	2005-02-24	333	\N	2009-01-27	440
+68	23	2	Aroostook	\N	2005-02-24	333	\N	2009-01-27	440
+69	23	3	Penobscot	\N	2005-02-24	333	\N	2009-01-27	440
+70	23	4	Hancock	\N	2005-02-24	333	\N	2009-01-27	440
+71	23	5	Piscataquis	\N	2005-02-24	333	\N	2009-01-27	440
+72	23	6	Capitol Region	\N	2005-02-24	333	\N	2009-01-27	440
+73	23	7	Somerset	\N	2005-02-24	333	\N	2009-01-27	440
+74	23	8	Casco Bay	\N	2005-02-24	333	\N	2009-01-27	440
+75	23	9	Western Maine	\N	2005-02-24	333	\N	2009-01-27	440
+76	24	2	North Central	\N	2005-02-24	333	\N	2009-01-27	440
+77	24	3	Southern	\N	2005-02-24	333	\N	2009-01-27	440
+78	24	4	Lower Eastern Shore	\N	2005-02-24	333	\N	2009-01-27	440
+79	24	5	Western	\N	2005-02-24	333	\N	2009-01-27	440
+80	25	1	State	\N	2005-02-24	333	\N	2009-01-27	440
+81	26	1	Eastern Upper Peninsula	\N	2005-02-24	333	\N	2009-01-27	440
+82	26	2	Western Upper Peninsula	\N	2005-02-24	333	\N	2009-01-27	440
+83	26	3	Northern Lower Peninsula	\N	2005-02-24	333	\N	2009-01-27	440
+84	26	4	Southern Lower Peninsula	\N	2005-02-24	333	\N	2009-01-27	440
+85	27	1	Aspen-Birch	\N	2005-02-24	333	\N	2009-01-27	440
+86	27	2	Northern Pine	\N	2005-02-24	333	\N	2009-01-27	440
+87	27	3	Central Hardwood	\N	2005-02-24	333	\N	2009-01-27	440
+88	27	4	Prairie	\N	2005-02-24	333	\N	2009-01-27	440
+89	28	1	Delta	\N	2005-02-24	333	\N	2009-01-27	440
+90	28	2	North	\N	2005-02-24	333	\N	2009-01-27	440
+91	28	3	Central	\N	2005-02-24	333	\N	2009-01-27	440
+92	28	4	South	\N	2005-02-24	333	\N	2009-01-27	440
+93	28	5	Southwest	\N	2005-02-24	333	\N	2009-01-27	440
+94	29	1	Eastern Ozarks	\N	2005-02-24	333	\N	2009-01-27	440
+95	29	2	Southwestern Ozarks	\N	2005-02-24	333	\N	2009-01-27	440
+96	29	3	Northwestern Ozarks	\N	2005-02-24	333	\N	2009-01-27	440
+97	29	4	Prairie	\N	2005-02-24	333	\N	2009-01-27	440
+98	29	5	Riverborder	\N	2005-02-24	333	\N	2009-01-27	440
+99	30	1	Northwestern	\N	2005-02-24	333	\N	2009-01-27	440
+100	30	2	Eastern	\N	2005-02-24	333	\N	2009-01-27	440
+101	30	3	Western	\N	2005-02-24	333	\N	2009-01-27	440
+102	30	4	West Central	\N	2005-02-24	333	\N	2009-01-27	440
+103	30	5	Southwestern	\N	2005-02-24	333	\N	2009-01-27	440
+104	31	1	Eastern	\N	2005-02-24	333	\N	2009-01-27	440
+105	31	2	Western	\N	2005-02-24	333	\N	2009-01-27	440
+106	32	1	Nevada	\N	2005-02-24	333	\N	2009-01-27	440
+107	33	2	Northern	\N	2005-02-24	333	\N	2009-01-27	440
+108	33	3	Southern	\N	2005-02-24	333	\N	2009-01-27	440
+109	34	1	State	\N	2005-02-24	333	\N	2009-01-27	440
+110	35	1	Northwestern	\N	2005-02-24	333	\N	2009-01-27	440
+111	35	2	Northeastern	\N	2005-02-24	333	\N	2009-01-27	440
+112	35	3	Southwestern	\N	2005-02-24	333	\N	2009-01-27	440
+113	35	4	Southeastern	\N	2005-02-24	333	\N	2009-01-27	440
+114	36	1	Adirondack	\N	2005-02-24	333	\N	2009-01-27	440
+115	36	2	Lake Plain	\N	2005-02-24	333	\N	2009-01-27	440
+116	36	3	Western Adirondack	\N	2005-02-24	333	\N	2009-01-27	440
+117	36	4	Eastern Adirondack	\N	2005-02-24	333	\N	2009-01-27	440
+118	36	5	Southwest Highlands	\N	2005-02-24	333	\N	2009-01-27	440
+119	36	6	South-Central Highlands	\N	2005-02-24	333	\N	2009-01-27	440
+120	36	7	Capitol District	\N	2005-02-24	333	\N	2009-01-27	440
+121	36	8	Catskill-Lower Hudson	\N	2005-02-24	333	\N	2009-01-27	440
+122	37	1	Southern Coastal Plain	\N	2005-02-24	333	\N	2009-01-27	440
+123	37	2	Northern Coastal Plain	\N	2005-02-24	333	\N	2009-01-27	440
+124	37	3	Piedmont	\N	2005-02-24	333	\N	2009-01-27	440
+125	37	4	Mountains	\N	2005-02-24	333	\N	2009-01-27	440
+126	38	1	Eastern	\N	2005-02-24	333	\N	2009-01-27	440
+127	39	1	South-Central	\N	2005-02-24	333	\N	2009-01-27	440
+128	39	2	Southeastern	\N	2005-02-24	333	\N	2009-01-27	440
+129	39	3	East-Central	\N	2005-02-24	333	\N	2009-01-27	440
+130	39	4	Northeastern	\N	2005-02-24	333	\N	2009-01-27	440
+131	39	5	Southwestern	\N	2005-02-24	333	\N	2009-01-27	440
+132	39	6	Northwestern	\N	2005-02-24	333	\N	2009-01-27	440
+133	40	1	Southeast	\N	2005-02-24	333	\N	2009-01-27	440
+134	40	2	Northeast	\N	2005-02-24	333	\N	2009-01-27	440
+135	40	3	North Central	\N	2008-01-30	333	\N	2011-07-21	333
+136	40	4	South Central	\N	2008-01-30	333	\N	2011-07-21	333
+137	40	5	Southwest	\N	2008-01-30	333	\N	2009-01-27	440
+138	40	6	High Plains	\N	2008-01-30	333	\N	2009-01-27	440
+139	40	7	Great Plains	\N	2008-01-30	333	\N	2009-01-27	440
+140	41	0	Northwest	\N	2005-02-24	333	\N	2009-01-27	440
+141	41	1	West Central	\N	2005-02-24	333	\N	2009-01-27	440
+142	41	2	Southwest	\N	2005-02-24	333	\N	2009-01-27	440
+143	41	3	Central	\N	2005-02-24	333	\N	2009-01-27	440
+144	41	4	Blue Mountains	\N	2005-02-24	333	\N	2009-01-27	440
+145	42	0	South Central	\N	2005-02-24	333	\N	2009-01-27	440
+146	42	5	Western	\N	2005-02-24	333	\N	2009-01-27	440
+147	42	6	North Central/Allegheny	\N	2005-02-24	333	\N	2009-01-27	440
+148	42	7	Southwestern	\N	2005-02-24	333	\N	2009-01-27	440
+149	42	8	Northeastern/Pocono	\N	2005-02-24	333	\N	2009-01-27	440
+150	42	9	Southeastern	\N	2005-02-24	333	\N	2009-01-27	440
+151	44	1	State	\N	2005-02-24	333	\N	2009-01-27	440
+152	45	1	Southern Coastal Plain	\N	2005-02-24	333	\N	2009-01-27	440
+153	45	2	Northern Coastal Plain	\N	2005-02-24	333	\N	2009-01-27	440
+154	45	3	Piedmont	\N	2005-02-24	333	\N	2009-01-27	440
+155	46	1	Eastern	\N	2005-02-24	333	\N	2009-01-27	440
+156	46	2	Western	\N	2005-02-24	333	\N	2009-01-27	440
+157	47	1	West	\N	2005-02-24	333	\N	2009-01-27	440
+158	47	2	West Central	\N	2005-02-24	333	\N	2009-01-27	440
+159	47	3	Central	\N	2005-02-24	333	\N	2009-01-27	440
+160	47	4	Plateau	\N	2005-02-24	333	\N	2009-01-27	440
+161	47	5	East	\N	2005-02-24	333	\N	2009-01-27	440
+162	48	1	Southeast	\N	2005-02-24	333	\N	2009-01-27	440
+163	48	2	Northeast	\N	2005-02-24	333	\N	2009-01-27	440
+164	48	3	North Central	\N	2008-01-30	333	\N	2011-07-21	333
+165	48	4	South	\N	2008-01-30	333	\N	2009-01-27	440
+166	48	5	West Central	\N	2008-01-30	333	\N	2011-07-21	333
+167	48	6	Northwest	\N	2008-01-30	333	\N	2009-01-27	440
+168	48	7	West	\N	2008-01-30	333	\N	2009-01-27	440
+169	49	1	Northern	\N	2005-02-24	333	\N	2009-01-27	440
+170	49	2	Uinta	\N	2005-02-24	333	\N	2009-01-27	440
+171	49	3	Central	\N	2005-02-24	333	\N	2009-01-27	440
+172	49	4	Eastern	\N	2005-02-24	333	\N	2009-01-27	440
+173	49	5	Southwestern	\N	2005-02-24	333	\N	2009-01-27	440
+174	50	2	Northern	\N	2005-02-24	333	\N	2009-01-27	440
+175	50	3	Southern	\N	2005-02-24	333	\N	2009-01-27	440
+176	51	1	Coastal Plain	\N	2005-02-24	333	\N	2009-01-27	440
+177	51	2	Southern Piedmont	\N	2005-02-24	333	\N	2009-01-27	440
+178	51	3	Northern Piedmont	\N	2005-02-24	333	\N	2009-01-27	440
+179	51	4	Northern Mountains	\N	2005-02-24	333	\N	2009-01-27	440
+180	51	5	Southern Mountains	\N	2005-02-24	333	\N	2009-01-27	440
+181	53	5	Puget Sound	\N	2005-02-24	333	\N	2009-01-27	440
+182	53	6	Olympic Peninsula	\N	2005-02-24	333	\N	2009-01-27	440
+183	53	7	Southwest	\N	2005-02-24	333	\N	2009-01-27	440
+184	53	8	Central	\N	2005-02-24	333	\N	2009-01-27	440
+185	53	9	Inland Empire	\N	2005-02-24	333	\N	2009-01-27	440
+186	54	2	Northeastern	\N	2005-02-24	333	\N	2009-01-27	440
+187	54	3	Southern	\N	2005-02-24	333	\N	2009-01-27	440
+188	54	4	Northwestern	\N	2005-02-24	333	\N	2009-01-27	440
+189	55	1	Northeastern	\N	2005-02-24	333	\N	2009-01-27	440
+190	55	2	Northwestern	\N	2005-02-24	333	\N	2009-01-27	440
+191	55	3	Central	\N	2005-02-24	333	\N	2009-01-27	440
+192	55	4	Southwestern	\N	2005-02-24	333	\N	2009-01-27	440
+193	55	5	Southeastern	\N	2005-02-24	333	\N	2009-01-27	440
+194	56	1	Western	\N	2005-02-24	333	\N	2009-01-27	440
+195	56	2	Central and Southeastern	\N	2005-02-24	333	\N	2009-01-27	440
+196	56	3	Northeastern	\N	2005-02-24	333	\N	2009-01-27	440
+197	60	1	American Samoa	\N	2013-10-30	440	\N	\N	\N
+198	64	1	Federated States of Micronesia	\N	2013-10-30	440	\N	\N	\N
+199	66	1	Guam	\N	2013-10-30	440	\N	\N	\N
+200	68	1	Marshall Islands	\N	2013-10-30	440	\N	\N	\N
+201	69	1	Northern Mariana Islands	\N	2013-10-30	440	\N	\N	\N
+202	70	1	Palau	\N	2013-10-30	440	\N	\N	\N
+203	72	1	Mainland Puerto Rico	\N	2005-02-24	333	\N	2012-06-21	440
+204	72	2	Vieques	\N	2009-06-17	440	\N	2012-06-21	440
+205	72	3	Culebra	\N	2009-06-17	440	\N	2012-06-21	440
+206	78	1	St. Croix	\N	2008-10-29	440	\N	2009-06-17	440
+207	78	2	St. John	\N	2009-06-17	440	\N	\N	\N
+208	78	3	St. Thomas	\N	2009-06-17	440	\N	\N	\N
+\.
+
+
+--
+-- Name: ix_ref_unit_index; Type: INDEX; Schema: public; Owner: peter; Tablespace: 
+--
+
+CREATE INDEX ix_ref_unit_index ON ref_unit USING btree (index);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

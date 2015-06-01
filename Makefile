@@ -78,3 +78,18 @@ output/cbm_cls_summary.csv:
 
 .PHONY: outputs
 outputs: output/cbmtrees.csv output/cbm_cls_summary.csv
+
+cbm_fgroup:
+	pg_dump -d cmax -t $@ -f ancillary_sql/$@.sql
+
+owngrpcd:
+	pg_dump -d cmax -t $@ -f ancillary_sql/$@.sql
+
+reservcd:
+	pg_dump -d cmax -t $@ -f ancillary_sql/$@.sql
+
+ref_unit:
+	pg_dump -d cmax -t $@ -f ancillary_sql/$@.sql
+
+.PHONY: a_sql
+a_sql: cbm_fgroup owngrpcd reservcd ref_unit
